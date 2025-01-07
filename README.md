@@ -64,7 +64,7 @@
 To run or contribute to the project locally:  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/YourRepoName/Groundwater-Guardian.git
+   git clone https://github.com/UG2-10/Groundwater-Guardian.git
    ```  
 2. Open the project in **Unity** (recommended version: 2021.3 or above).  
 3. Install necessary packages and assets via Unity Package Manager.  
