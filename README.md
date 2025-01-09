@@ -1,7 +1,7 @@
 
-# 🌊 **TEMP: A Conservation Game** 🌱
+# 🌊 **EcoSplash: A Conservation Game** 🌱  
 
-**TEMP** is an interactive, web-based Unity game designed to teach players about groundwater conservation through fun and engaging gameplay. Tackle real-world challenges like droughts, floods, and contamination while making sustainable decisions that promote water management and conservation.  
+**EcoSplash** is an interactive, web-based Unity game designed to teach players about groundwater conservation through fun and engaging gameplay. Tackle real-world challenges like droughts, floods, and contamination while making sustainable decisions that promote water management and conservation.  
 
 ---
 
@@ -121,5 +121,3 @@ For questions, suggestions, or feedback, please reach out at:
 - Special thanks to Unity, Blender, and the open-source community for tools and resources.
 
 ---
-
-Would you like to modify anything further or add details specific to your team? 😊
