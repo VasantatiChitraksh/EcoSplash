@@ -68,9 +68,9 @@ ExportedObj/
 *.bak
 
 # macOS files
-Assets/_Assets/Terrain/Terrain Textures/Prefab/Terrain_Data/
 .DS_Store
 # Windows system files
 Thumbs.db
 
-Assets/_Assets/Terrain/Terrain Textures/Prefab/Terrain_Data/
+#Assets Files
+Assets/_Assets/Terrain/Terrain Textures/Prefab/Terrain_Data/Terrain.asset
