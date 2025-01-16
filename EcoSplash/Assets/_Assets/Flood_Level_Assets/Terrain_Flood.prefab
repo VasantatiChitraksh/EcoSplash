@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4708488635232895695}
   - component: {fileID: 208614841221033554}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Terrain_Flood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
