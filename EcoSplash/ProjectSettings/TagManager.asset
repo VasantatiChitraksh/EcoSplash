@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Garbage
   - Ground
+  - Tubs
+  - Dam
+  - Trees
   layers:
   - Default
   - TransparentFX
