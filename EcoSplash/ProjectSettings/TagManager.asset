@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Garbage
+  - Ground
+  - Tubs
+  - Dam
+  - Trees
   layers:
   - Default
   - TransparentFX
