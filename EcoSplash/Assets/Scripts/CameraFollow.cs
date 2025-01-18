@@ -2,26 +2,24 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform playerTransform; // Player's transform
-    [SerializeField] private Vector3 offset;           // Offset from the player
+    [SerializeField] private Transform player; // Reference to the player's Transform
+    [SerializeField] private Vector3 offset = new Vector3(0, 10, -10); // Camera offset position
+    [SerializeField] private float smoothSpeed = 0.125f; // Speed of smoothing the camera
 
-    [SerializeField] private Vector2 xBounds;          // Minimum and maximum X values
-    [SerializeField] private Vector2 zBounds;          // Minimum and maximum Z values
-    [SerializeField] private float minHeight = 5f;     // Minimum height for the camera
-
-    void LateUpdate()
+    private void LateUpdate()
     {
-        // Calculate the new camera position based on the player's position
-        Vector3 newPosition = playerTransform.position + offset;
+        if (player == null) return; // Ensure the player is assigned
 
-        // Clamp the position within the defined bounds
-        newPosition.x = Mathf.Clamp(newPosition.x, xBounds.x, xBounds.y);
-        newPosition.z = Mathf.Clamp(newPosition.z, zBounds.x, zBounds.y);
+        // Desired position for the camera
+        Vector3 desiredPosition = player.position + offset;
 
-        // Ensure the camera's height does not go below the minHeight
-        newPosition.y = Mathf.Max(playerTransform.position.y + offset.y, minHeight);
+        // Smooth transition between current position and desired position
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
 
-        // Update the camera position
-        transform.position = newPosition;
+        // Update the camera's position
+        transform.position = smoothedPosition;
+
+        // Optionally, keep the camera looking at the player
+        transform.LookAt(player);
     }
 }
