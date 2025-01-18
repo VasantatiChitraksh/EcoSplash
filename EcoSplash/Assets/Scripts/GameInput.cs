@@ -31,4 +31,15 @@ public class GameInput : MonoBehaviour
         Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
         return inputVector.normalized;
     }
+
+    public bool GetJumpInput()
+    {
+        if (playerInputActions == null)
+        {
+            Debug.LogError("PlayerInputActions is not initialized.");
+            return false;
+        }
+
+        return playerInputActions.Player.Jump.triggered;
+    }
 }
