@@ -132,6 +132,10 @@ PrefabInstance:
       value: BathHub_5
       objectReference: {fileID: 0}
     - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -283,6 +287,10 @@ PrefabInstance:
       value: BathHub_6
       objectReference: {fileID: 0}
     - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -409,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b94974da8b562e4ea5bbdfb8b864795, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b94974da8b562e4ea5bbdfb8b864795, type: 3}
       propertyPath: m_TagString
@@ -1323,8 +1331,8 @@ Transform:
   m_GameObject: {fileID: 456853008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5, y: -2.9, z: -25.5}
-  m_LocalScale: {x: 87.57925, y: 54.800453, z: 1}
+  m_LocalPosition: {x: 7.5, y: -9.7004, z: -25.5}
+  m_LocalScale: {x: 87.57925, y: 41.198982, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1919261191}
@@ -1456,6 +1464,10 @@ PrefabInstance:
       value: GuavaTree
       objectReference: {fileID: 0}
     - target: {fileID: 1779090162253299471, guid: af28e02efb1b49bc09580ce7162442e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779090162253299471, guid: af28e02efb1b49bc09580ce7162442e3, type: 3}
       propertyPath: m_TagString
       value: Trees
       objectReference: {fileID: 0}
@@ -1480,6 +1492,10 @@ PrefabInstance:
     - target: {fileID: 4850112123033625416, guid: eb484bc6289da1631ac007cafa331375, type: 3}
       propertyPath: m_Name
       value: BananaTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850112123033625416, guid: eb484bc6289da1631ac007cafa331375, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4850112123033625416, guid: eb484bc6289da1631ac007cafa331375, type: 3}
       propertyPath: m_TagString
@@ -1787,6 +1803,10 @@ PrefabInstance:
     - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
       propertyPath: m_Name
       value: BathHub_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
       propertyPath: m_TagString
@@ -2155,6 +2175,10 @@ PrefabInstance:
     - target: {fileID: 1854656474716756, guid: 46dea74f7999f4c4f9d26ad24b8282c6, type: 3}
       propertyPath: m_Name
       value: LemonTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854656474716756, guid: 46dea74f7999f4c4f9d26ad24b8282c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854656474716756, guid: 46dea74f7999f4c4f9d26ad24b8282c6, type: 3}
       propertyPath: m_TagString
@@ -2996,6 +3020,10 @@ PrefabInstance:
     - target: {fileID: 137888, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
       propertyPath: m_Name
       value: PalmTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 137888, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 137888, guid: ecc2762d91d3584429565bde5fbede9e, type: 3}
       propertyPath: m_TagString
@@ -4064,6 +4092,10 @@ PrefabInstance:
       value: BathHub_4
       objectReference: {fileID: 0}
     - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -4335,6 +4367,10 @@ PrefabInstance:
       value: BathHub_2
       objectReference: {fileID: 0}
     - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357363405357342, guid: d354bbf6d0a7bc543b86d5b1337c7933, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -4536,7 +4572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b94974da8b562e4ea5bbdfb8b864795, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b94974da8b562e4ea5bbdfb8b864795, type: 3}
       propertyPath: m_TagString
@@ -5175,7 +5211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b94974da8b562e4ea5bbdfb8b864795, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2b94974da8b562e4ea5bbdfb8b864795, type: 3}
       propertyPath: m_TagString
@@ -5820,37 +5856,6 @@ Transform:
   - {fileID: 2088177920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1933516444
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1933516445}
-  m_Layer: 0
-  m_Name: Red
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1933516445
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933516444}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3414474, y: 4.4370856, z: -33.111423}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935453778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1855710351377478, guid: 5c9211eb71cff4f4996a21d92317f601, type: 3}
@@ -5888,6 +5893,10 @@ PrefabInstance:
     - target: {fileID: 1854656474716756, guid: 46dea74f7999f4c4f9d26ad24b8282c6, type: 3}
       propertyPath: m_Name
       value: MangoTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854656474716756, guid: 46dea74f7999f4c4f9d26ad24b8282c6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854656474716756, guid: 46dea74f7999f4c4f9d26ad24b8282c6, type: 3}
       propertyPath: m_TagString
@@ -6718,6 +6727,10 @@ PrefabInstance:
       value: BathHub_1
       objectReference: {fileID: 0}
     - target: {fileID: 7655516197977436952, guid: e96d27ebba892c0439a211ef1ef9c7f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7655516197977436952, guid: e96d27ebba892c0439a211ef1ef9c7f7, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -6736,10 +6749,9 @@ SceneRoots:
   - {fileID: 1300312780}
   - {fileID: 294266871}
   - {fileID: 306353829}
+  - {fileID: 696127028}
   - {fileID: 2125166414}
   - {fileID: 1354117591}
   - {fileID: 1594826081}
   - {fileID: 1919261191}
   - {fileID: 605622004}
-  - {fileID: 696127028}
-  - {fileID: 1933516445}
