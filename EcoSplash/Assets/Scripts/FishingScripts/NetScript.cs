@@ -7,8 +7,8 @@ public class NetScript : MonoBehaviour
     private float minY = -7f;
     private float maxY = 3f;
 
-    private float netX = 1f;
-    private float netY = 1.5f;
+    private float netX = -2f;
+    private float netY = -2f;
 
     private bool isCaught = false;
 
