@@ -2011,7 +2011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximityRange: 5
-  damSceneName: DamScene
+  leverGameSceneName: LeverGame
 --- !u!1 &667414655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4734,7 +4734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximityRange: 5
-  damSceneName: DamScene
+  leverGameSceneName: LeverGame
 --- !u!1001 &1764919108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5318,7 +5318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proximityRange: 5
-  damSceneName: DamScene
+  leverGameSceneName: LeverGame
 --- !u!1 &1919261190
 GameObject:
   m_ObjectHideFlags: 0
@@ -5905,6 +5905,10 @@ PrefabInstance:
     - target: {fileID: 8085977342662220534, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
       propertyPath: m_Name
       value: Hands1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085977342662220534, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

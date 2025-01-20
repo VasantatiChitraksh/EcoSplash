@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamLevelController : MonoBehaviour
 {
     public float proximityRange = 5f; // Range within which the player can interact
-    public string damSceneName = "DamScene"; // Name of the dam scene to load
+    public string leverGameSceneName = "LeverGame"; // Name of the mini-game scene to load
 
     private GameObject player;
+    private bool isMiniGameActive = false; // To track if the mini-game is already active
 
     void Start()
     {
@@ -16,13 +18,13 @@ public class DamLevelController : MonoBehaviour
     void Update()
     {
         // Check if the player presses the F key
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && !isMiniGameActive)
         {
             // Check proximity to the dam object
             if (IsPlayerNearDam())
             {
-                // Load the dam scene using the Loader class
-                Loader.Load(Loader.Scene.LeverGame); // Replace `GameScene` with the scene you want to load
+                // Use the Loader class to load the mini-game
+                Loader.Load(Loader.Scene.LeverGame); // Loading LeverGame scene
             }
         }
     }
