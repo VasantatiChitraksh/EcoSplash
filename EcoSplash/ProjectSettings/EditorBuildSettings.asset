@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FloodLevel.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/FloodScene.unity
+    guid: 65f8796927a844f4e8976ab4e4d07c6d
+  - enabled: 1
+    path: Assets/Scenes/LeverGame.unity
+    guid: aefd563f4e6d5ac4a8d03689d4792043
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 2a8c1140ac653514eaafdd067303b356
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
