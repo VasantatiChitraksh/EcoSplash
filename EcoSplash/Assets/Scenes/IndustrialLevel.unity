@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1703110770}
-  offset: {x: 0, y: 8, z: -5}
+  offset: {x: 0, y: 6, z: -5}
   xBounds: {x: -27, y: 41}
   zBounds: {x: -36, y: 34}
   minHeight: 10
