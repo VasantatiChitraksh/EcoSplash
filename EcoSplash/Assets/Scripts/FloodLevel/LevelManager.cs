@@ -32,19 +32,21 @@ public class LevelManager : MonoBehaviour
         {
             HandData handData = handDataList[currentHandIndex];
 
-            // Check if the hand's Transform is not null and not already active
             if (handData.input != null && !handData.input.gameObject.activeSelf)
-            {   
-                // Activate the hand at its predefined position and rotation
-                Debug.Log(handData.input.position);
-                handData.input.gameObject.SetActive(true);
-                Debug.Log(handData.input.gameObject);
+            {
+                // Set the position and rotation explicitly before activation
+                Vector3 desiredPosition = handData.input.position;
 
-                Debug.Log("Hand Activated: " + handData.input.name);
+                handData.input.position = desiredPosition;
+
+                Debug.Log($"Activating hand {currentHandIndex} at position: {desiredPosition}");
+
+                // Activate the hand
+                handData.input.gameObject.SetActive(true);
             }
 
-            // Wait until the current hand is deactivated (interaction completed)
-            yield return new WaitUntil(() => !handData.input.gameObject.activeSelf); 
+            // Wait until the hand is deactivated (interaction completed)
+            yield return new WaitUntil(() => !handData.input.gameObject.activeSelf);
 
             currentHandIndex++;
 
@@ -52,7 +54,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(handActivationInterval);
         }
 
-        Debug.Log("All hands have been activated based on time.");
+        Debug.Log("All hands have been activated and interacted with.");
     }
 
     private void CheckPlayerInteraction()
