@@ -31,7 +31,12 @@ public class ValveController : MonoBehaviour
 
     void Update()
     {
-        // Valve Rotation and Tension Control
+        HandleValveRotation();
+        HandleWaterLevels();
+    }
+
+    private void HandleValveRotation()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && !isRotating)
         {
             isRotating = true;
@@ -58,38 +63,40 @@ public class ValveController : MonoBehaviour
             }
         }
 
-        // Progress Bar Logic
-        float tensionValue = tensionSlider.value;
-
-        if (tensionValue >= idealZoneMin && tensionValue <= idealZoneMax)
+        if (tensionSlider.value >= idealZoneMin && tensionSlider.value <= idealZoneMax)
         {
-            progressBar.value = Mathf.Clamp(progressBar.value + progressIncreaseRate * Time.deltaTime, 0f, progressMaxValue); // Clamped to new max
+            progressBar.value = Mathf.Clamp(progressBar.value + progressIncreaseRate * Time.deltaTime, 0f, progressMaxValue);
         }
 
         if (progressBar.value >= progressBar.maxValue && !maxProgressReached)
         {
             Debug.Log("Progress reached maximum value!");
             maxProgressReached = true;
-            OnMaxProgressReached(); // Handle logic when progress is completed
+            OnMaxProgressReached();
         }
+    }
 
-        // Water Level Logic
-        float progressNormalized = progressBar.value / progressBar.maxValue; // Normalize progress to 0-1 range
-        float waterLevelChange = progressNormalized * waterLevelChangeRate; // Calculate the change in water level
-
+    private void HandleWaterLevels()
+    {
         if (!maxProgressReached)
         {
-            // Decrease Upstream Water Y Position
-            upstreamWater.position = new Vector3(upstreamWater.position.x, upstreamWater.position.y - waterLevelChange * Time.deltaTime, upstreamWater.position.z);
+            float progressNormalized = progressBar.value / progressBar.maxValue;
+            float waterLevelChange = progressNormalized * waterLevelChangeRate;
 
-            // Increase Lowstream Water Y Position
-            lowstreamWater.position = new Vector3(lowstreamWater.position.x, lowstreamWater.position.y + waterLevelChange * Time.deltaTime, lowstreamWater.position.z);
+            upstreamWater.position -= new Vector3(0, waterLevelChange * Time.deltaTime, 0);
+            lowstreamWater.position += new Vector3(0, waterLevelChange * Time.deltaTime, 0);
         }
     }
 
     private void OnMaxProgressReached()
     {
-        // Return to the FloodScene and unload the mini-game
-        Loader.Load(Loader.Scene.FloodScene);
+        Debug.Log("Mini-game completed! Loading the next scene...");
+        SceneManager.LoadScene("FloodSceneFull");
+
+        if (LevelManagerFull.Instance != null)
+        {
+            LevelManagerFull.Instance.isMiniGameActive = false;
+            LevelManagerFull.Instance.NotifyMiniGameCompleted();
+        }
     }
 }
