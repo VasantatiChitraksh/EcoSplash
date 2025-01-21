@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &10359350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 10359352}
+  - component: {fileID: 10359351}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &10359351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10359350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4172ca6c76e6fe54db1888962911b16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proximityRange: 5
+  leverGameSceneName: LeverGame
+  isMiniGameActive: 0
+  miniGameCompletionThreshold: 3
+--- !u!4 &10359352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10359350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &26439615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3695,88 +3743,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 685195320120420345, guid: 512b72c73a22e904d87662ebca8eb1e1, type: 3}
   m_PrefabInstance: {fileID: 1368426639}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1453795544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1453795546}
-  - component: {fileID: 1453795547}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1453795546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453795544}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1453795547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453795544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e5e878e02cfb0249bda78b6596149ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handDataList:
-  - input: {fileID: 705561775668173684}
-    Tubs:
-    - {fileID: 7440639069298190495}
-    - {fileID: 1322398506413766306}
-  - input: {fileID: 6312576567882582945}
-    Tubs:
-    - {fileID: 4221094783199030427}
-    - {fileID: 6462492059361016574}
-  - input: {fileID: 8607335738485954617}
-    Tubs:
-    - {fileID: 4796670232331320}
-    - {fileID: 338395332841607867}
-  - input: {fileID: 7850157557126986199}
-    Tubs:
-    - {fileID: 4166738210877272}
-    - {fileID: 4166736799948890}
-  - input: {fileID: 394951445424603729}
-    Tubs:
-    - {fileID: 969881920}
-  - input: {fileID: 6653301201832353812}
-    Tubs:
-    - {fileID: 457297880}
-  - input: {fileID: 5697421616470044767}
-    Tubs:
-    - {fileID: 1527176057}
-  - input: {fileID: 8589868149828556873}
-    Tubs:
-    - {fileID: 102353148}
-  - input: {fileID: 3117699811452835895}
-    Tubs:
-    - {fileID: 1734694054}
-  player: {fileID: 556332984}
-  interactionDistance: 3
-  handActivationInterval: 5
-  proximityRange: 5
-  leverGameSceneName: LeverGame
-  isMiniGameActive: 0
 --- !u!1 &1500308904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1974105250760466, guid: bbb972e8372282f4093c9484693385fd, type: 3}
@@ -5205,50 +5171,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3ad660daf3a1e02458b9f3eca418861a, type: 3}
---- !u!1 &2039298484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2039298486}
-  - component: {fileID: 2039298485}
-  m_Layer: 0
-  m_Name: GameManger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2039298485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039298484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6627d4aebccc9284396e7af31ec5e860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2039298486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039298484}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064347033 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1783979763778466, guid: bd1a894f239d58d4dbf63f27e28096bd, type: 3}
@@ -5701,7 +5623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2511065888429639473, guid: b1c676e639db4e44487afdab652a4684, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2929244878449226220, guid: b1c676e639db4e44487afdab652a4684, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5930,6 +5852,10 @@ PrefabInstance:
     - target: {fileID: 8603233550230783713, guid: 6b1c2c5995c5da841ba6bf20c3c240dd, type: 3}
       propertyPath: m_Name
       value: Pit2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603233550230783713, guid: 6b1c2c5995c5da841ba6bf20c3c240dd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8603233550230783713, guid: 6b1c2c5995c5da841ba6bf20c3c240dd, type: 3}
       propertyPath: m_TagString
@@ -6171,6 +6097,10 @@ PrefabInstance:
       value: Pit5
       objectReference: {fileID: 0}
     - target: {fileID: 6917502558060571060, guid: cc38d5c5468db9d409cd80f0a09db2b7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917502558060571060, guid: cc38d5c5468db9d409cd80f0a09db2b7, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -6288,6 +6218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTree
       objectReference: {fileID: 0}
+    - target: {fileID: 6892496173268832177, guid: 5e98303903d4f3342834795bb3b6e9b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6350,6 +6284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dam_1
       objectReference: {fileID: 0}
+    - target: {fileID: 830107231131755741, guid: 63f2c1bcfbe7e8d428212b4c2ddd66d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6409,6 +6347,10 @@ PrefabInstance:
     - target: {fileID: 3213563860078838706, guid: 0b88f22556e9ebd4da631b91a0ae1d18, type: 3}
       propertyPath: m_Name
       value: Dam_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3213563860078838706, guid: 0b88f22556e9ebd4da631b91a0ae1d18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6690,7 +6632,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4030950698670362668, guid: 608911e53c730ff468527a0240bcf4ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.8
+      value: 21.11
       objectReference: {fileID: 0}
     - target: {fileID: 4030950698670362668, guid: 608911e53c730ff468527a0240bcf4ac, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6698,7 +6640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4030950698670362668, guid: 608911e53c730ff468527a0240bcf4ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.5
+      value: 3.11
       objectReference: {fileID: 0}
     - target: {fileID: 4030950698670362668, guid: 608911e53c730ff468527a0240bcf4ac, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6731,6 +6673,10 @@ PrefabInstance:
     - target: {fileID: 4376092430092225174, guid: 608911e53c730ff468527a0240bcf4ac, type: 3}
       propertyPath: m_Name
       value: GuavaTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 4376092430092225174, guid: 608911e53c730ff468527a0240bcf4ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6788,6 +6734,10 @@ PrefabInstance:
     - target: {fileID: 1762827010557757544, guid: 7a0ed5e62b1d2804eb34c5fa6d5c811c, type: 3}
       propertyPath: m_Name
       value: Dam_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762827010557757544, guid: 7a0ed5e62b1d2804eb34c5fa6d5c811c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6850,6 +6800,10 @@ PrefabInstance:
       value: Pit4
       objectReference: {fileID: 0}
     - target: {fileID: 9025375505506361690, guid: c90858dd9c8fd5e4a9c44007e6680308, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025375505506361690, guid: c90858dd9c8fd5e4a9c44007e6680308, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -6883,7 +6837,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7362803378676678145, guid: c5ced2e24aa87d34b824dad9933b6e34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8483305
+      value: 14.79
       objectReference: {fileID: 0}
     - target: {fileID: 7362803378676678145, guid: c5ced2e24aa87d34b824dad9933b6e34, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6891,7 +6845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362803378676678145, guid: c5ced2e24aa87d34b824dad9933b6e34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.081354
+      value: -25.46
       objectReference: {fileID: 0}
     - target: {fileID: 7362803378676678145, guid: c5ced2e24aa87d34b824dad9933b6e34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6924,6 +6878,10 @@ PrefabInstance:
     - target: {fileID: 7883056390491727035, guid: c5ced2e24aa87d34b824dad9933b6e34, type: 3}
       propertyPath: m_Name
       value: BananaTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 7883056390491727035, guid: c5ced2e24aa87d34b824dad9933b6e34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7098,7 +7056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8381442548032328597, guid: 364b16510e554d945b711be31aff4ce0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7126,6 +7084,10 @@ PrefabInstance:
     - target: {fileID: 1300567363690743786, guid: 3a239b82268deef4cbc55ad8d1085153, type: 3}
       propertyPath: m_Name
       value: Pit1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300567363690743786, guid: 3a239b82268deef4cbc55ad8d1085153, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1300567363690743786, guid: 3a239b82268deef4cbc55ad8d1085153, type: 3}
       propertyPath: m_TagString
@@ -7197,6 +7159,10 @@ PrefabInstance:
     - target: {fileID: 7813527039607919441, guid: 7991750df36960e409cf932906f7b253, type: 3}
       propertyPath: m_Name
       value: Pit6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813527039607919441, guid: 7991750df36960e409cf932906f7b253, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7813527039607919441, guid: 7991750df36960e409cf932906f7b253, type: 3}
       propertyPath: m_TagString
@@ -7300,6 +7266,10 @@ PrefabInstance:
       value: Pit3
       objectReference: {fileID: 0}
     - target: {fileID: 8805264492972839292, guid: 1a78058c78a75e542972d6d901fbb5ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805264492972839292, guid: 1a78058c78a75e542972d6d901fbb5ab, type: 3}
       propertyPath: m_TagString
       value: Tubs
       objectReference: {fileID: 0}
@@ -7322,9 +7292,8 @@ SceneRoots:
   - {fileID: 605622004}
   - {fileID: 955163957}
   - {fileID: 1686137662}
-  - {fileID: 1453795546}
   - {fileID: 1688498354}
   - {fileID: 2114209937}
   - {fileID: 667414656}
   - {fileID: 791868749}
-  - {fileID: 2039298486}
+  - {fileID: 10359352}
