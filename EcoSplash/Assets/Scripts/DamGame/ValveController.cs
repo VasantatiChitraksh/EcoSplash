@@ -89,6 +89,7 @@
 // }
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ValveController : MonoBehaviour
 {
@@ -104,7 +105,7 @@ public class ValveController : MonoBehaviour
     public float idealZoneMax = 0.625f;
     private Quaternion initialRotation;
     private bool isRotating = false;
-    private float progressMaxValue = 0.15f; 
+    private float progressMaxValue = 0.15f;
     public Transform upstreamWater;
     public Transform lowstreamWater;
     public float waterLevelChangeRate = 0.2f;
@@ -119,22 +120,7 @@ public class ValveController : MonoBehaviour
     void Start()
     {
         initialRotation = transform.localRotation;
-        progressBar.maxValue = progressMaxValue; 
-
-        // Ensure AudioSource is assigned
-        if (audioSource == null)
-        {
-            audioSource = GetComponent<AudioSource>();
-        }
-
-        if (audioSource == null)
-        {
-            Debug.LogError("AudioSource component is missing. Please attach one to the GameObject.");
-        }
-        if (endScreen != null)
-        {
-            endScreen.SetActive(false);
-        }
+        progressBar.maxValue = progressMaxValue;
     }
 
     void Update()
@@ -186,31 +172,30 @@ public class ValveController : MonoBehaviour
             progressBar.value = Mathf.Clamp(progressBar.value + progressIncreaseRate * Time.deltaTime, 0f, progressMaxValue); // Clamped to new max
         }
 
-        if (progressBar.value >= progressBar.maxValue)
+        if (progressBar.value >= progressBar.maxValue && !maxProgressReached)
         {
             Debug.Log("Progress reached maximum value!");
             maxProgressReached = true;
-            if (endScreen != null)
-            {
-                endScreen.SetActive(true);
-            }
-            
-            progressBar.gameObject.SetActive(false);
-            tensionSlider.gameObject.SetActive(false);
-            UItext.gameObject.SetActive(false);
+            OnMaxProgressReached(); // Handle logic when progress is completed
         }
 
         // Water Level Logic
         float progressNormalized = progressBar.value / progressBar.maxValue; // Normalize progress to 0-1 range
         float waterLevelChange = progressNormalized * waterLevelChangeRate; // Calculate the change in water level
 
-        // Decrease Upstream Water Y Position
         if (!maxProgressReached)
         {
-            upstreamWater.position = new Vector3(upstreamWater.position.x, upstreamWater.position.y - waterLevelChange * (Time.deltaTime / 10f), upstreamWater.position.z);
+            // Decrease Upstream Water Y Position
+            upstreamWater.position = new Vector3(upstreamWater.position.x, upstreamWater.position.y - waterLevelChange * Time.deltaTime, upstreamWater.position.z);
 
-            // Increase Lowstream Water Y Position. If you want it to decrease as well, use the same logic as upstream
+            // Increase Lowstream Water Y Position
             lowstreamWater.position = new Vector3(lowstreamWater.position.x, lowstreamWater.position.y + waterLevelChange * Time.deltaTime, lowstreamWater.position.z);
         }
+    }
+
+    private void OnMaxProgressReached()
+    {
+        // Return to the FloodScene and unload the mini-game
+        Loader.Load(Loader.Scene.FloodScene);
     }
 }
