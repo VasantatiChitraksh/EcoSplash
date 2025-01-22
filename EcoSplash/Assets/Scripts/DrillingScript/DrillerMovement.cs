@@ -14,7 +14,7 @@ public class DrillerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-         cam = Camera.main;
+        cam = Camera.main;
         lastPosition = transform.position;
     }
 
@@ -35,6 +35,9 @@ public class DrillerMovement : MonoBehaviour
 
         Rigidbody2D rb = GetComponent<Rigidbody2D>(); 
         rb.linearVelocity = new Vector2(0, -downSpeed);
+
+        float clampedX = Mathf.Clamp(transform.position.x, -10f, 10f);
+        transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
         if (Input.GetMouseButton(0))
         {

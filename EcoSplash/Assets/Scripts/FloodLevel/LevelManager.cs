@@ -1,11 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
     [Header("Hand and Object Data")]
     [SerializeField] private List<HandData> handDataList; // List of hand data with transforms and tubs
+
+    public static int groundWater = 0;
 
     [Header("Player Settings")]
     [SerializeField] private Transform player; // Player object
@@ -16,14 +19,35 @@ public class LevelManager : MonoBehaviour
     private int currentHandIndex = 0; // Tracks the currently activated hand
     private bool isInteracting = false; // Prevents multiple interactions simultaneously
 
+    public float proximityRange = 5f; // Range within which the player can interact
+    public string leverGameSceneName = "LeverGame"; // Name of the mini-game scene to load
+
+    private GameObject player1;
+    public bool isMiniGameActive = false; // To track if the mini-game is already active
+
     private void Start()
     {
         StartCoroutine(ActivateHandsByTime());
+        player1 = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
         CheckPlayerInteraction();
+        CheckPlayerDam();
+    }
+
+    private void CheckPlayerDam()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && !isMiniGameActive)
+        {
+            // Check proximity to the dam object
+            if (IsPlayerNearDam())
+            {
+                Debug.Log("Player pressed F near Dam");
+                LoadDamScene();
+            }
+        }
     }
 
     private IEnumerator ActivateHandsByTime()
@@ -57,6 +81,15 @@ public class LevelManager : MonoBehaviour
         Debug.Log("All hands have been activated and interacted with.");
     }
 
+    private void LoadDamScene()
+    {
+        isMiniGameActive = true;
+
+        // Load the mini-game scene directly
+        SceneManager.LoadScene(leverGameSceneName);
+        Debug.Log("Mini-game scene loaded");
+    }
+
     private void CheckPlayerInteraction()
     {
         if (isInteracting) return; // Prevent interaction spamming
@@ -85,6 +118,7 @@ public class LevelManager : MonoBehaviour
     {
         isInteracting = true;
 
+        groundWater += 1000;
         // Activate all Tubs linked to the hand
         foreach (Transform tub in handData.Tubs)
         {
@@ -104,6 +138,18 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f); // Short delay to prevent interaction spamming
         isInteracting = false;
+    }
+
+    private bool IsPlayerNearDam()
+    {
+        // Calculate the distance between the player and the dam
+        float distance = Vector3.Distance(player1.transform.position, transform.position);
+        return distance <= proximityRange;
+    }
+
+    public static int GetWater()
+    {
+        return groundWater;
     }
 }
 
