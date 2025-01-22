@@ -10,6 +10,8 @@ public class LevelManagerFull : MonoBehaviour
     [Header("Player Settings")]
     public float proximityRange = 5f;
     public string leverGameSceneName = "LeverGame";
+
+    private string end = "FloodSceneFinal";
     private GameObject player1;
     public bool isMiniGameActive = false;
     private int miniGameCounter = 1;
@@ -83,6 +85,7 @@ public class LevelManagerFull : MonoBehaviour
 
     private void GameCompleted()
     {
+        SceneManager.LoadScene(end);
         Debug.Log("Game completed! All mini-games finished.");
     }
 }
