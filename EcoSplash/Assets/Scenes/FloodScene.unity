@@ -5523,6 +5523,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 40db3173a05ae3242b1c182a09b0a183, type: 2}
+    - target: {fileID: 3604619678156985696, guid: ee890c2bad02eb24992202c420217a7a, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7270501583233994522, guid: ee890c2bad02eb24992202c420217a7a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -5624,6 +5628,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1688498354}
     m_Modifications:
+    - target: {fileID: 1190429457153000196, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4094777392214007970, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.5
@@ -5794,6 +5802,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 424587580969705381, guid: 757d85a9419a1fe4c8313dd674c014c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495532035134913981, guid: 757d85a9419a1fe4c8313dd674c014c7, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7052658631285235438, guid: 757d85a9419a1fe4c8313dd674c014c7, type: 3}
@@ -5992,6 +6004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hands6
       objectReference: {fileID: 0}
+    - target: {fileID: 6998496030934432015, guid: b71840fdb1957c942aeb90fdb25195c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6008,6 +6024,10 @@ PrefabInstance:
     - target: {fileID: 2841273635130159039, guid: a349dccd13d456c45abf7f6c0f07a148, type: 3}
       propertyPath: m_Name
       value: Hands7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536537367132036772, guid: a349dccd13d456c45abf7f6c0f07a148, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8351594717226755186, guid: a349dccd13d456c45abf7f6c0f07a148, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6231,6 +6251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8402190997184782823, guid: e4923dad174f3e9419156e844c5719b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6429,6 +6453,10 @@ PrefabInstance:
     - target: {fileID: 1626896785593796754, guid: 53a05687d8f621448b3e77f223ca9a6c, type: 3}
       propertyPath: m_Name
       value: Hands5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4767759164875355388, guid: 53a05687d8f621448b3e77f223ca9a6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8956147161595133756, guid: 53a05687d8f621448b3e77f223ca9a6c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6629,6 +6657,10 @@ PrefabInstance:
     - target: {fileID: 420982918185472845, guid: f7ae4b68c8b397942bc70285373a905b, type: 3}
       propertyPath: m_Name
       value: Hands9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5604804467048417464, guid: f7ae4b68c8b397942bc70285373a905b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8065934876465626768, guid: f7ae4b68c8b397942bc70285373a905b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6982,6 +7014,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8918074184903260729, guid: e5b4b4e0c78c023429dd7bf8289db024, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6995,6 +7031,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1688498354}
     m_Modifications:
+    - target: {fileID: 466112346323390434, guid: 4a652aef20d8ce341a1dd88b65f9e5cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3202261963244749578, guid: 4a652aef20d8ce341a1dd88b65f9e5cf, type: 3}
       propertyPath: m_Name
       value: Hands8
