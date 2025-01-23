@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e266dd194ef07e74fb5fa3c5df471243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCollection: {fileID: 11400000, guid: 790140bec45ded94da3da83842920c45, type: 2}
+  levelCollection: {fileID: 11400000, guid: c5fec2d78278468449943915d4c90755, type: 2}
   cellPrefab: {fileID: 2317155852989066130, guid: 101eeee7cc639d54b843ea14f7a37df3, type: 3}
   currentLevelIndex: 0
   levelIndicatorText: {fileID: 89683970}
