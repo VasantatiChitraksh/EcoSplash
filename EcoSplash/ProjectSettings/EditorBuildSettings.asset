@@ -21,14 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/FloodSceneFull.unity
     guid: 44a59d465374470479c78d24672c02f0
   - enabled: 1
-    path: Assets/Scenes/DroughtScene.unity
-    guid: 1861febaa1f492143849ce1e0f2f208c
-  - enabled: 1
-    path: Assets/Scenes/DroughtSceneWell.unity
-    guid: fcdef85b00a700048bf2f5cd89fa1423
-  - enabled: 1
-    path: Assets/Scenes/DrillingMiniGame.unity
-    guid: ef1da55cd3aa656498da119585531d50
+    path: Assets/Scenes/FloodSceneFinal.unity
+    guid: 9963087674aa3ce4f837e2d01242970d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
