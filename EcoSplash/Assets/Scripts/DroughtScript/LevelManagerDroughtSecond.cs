@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class LevelManagerDrought : MonoBehaviour
+public class LevelManagerDroughtSecond : MonoBehaviour
 {
     [Header("Hand and Object Data")]
-    [SerializeField] private List<HandDataDrought> handDataList; // List of hand data with transforms and tubs
+    [SerializeField] private List<HandDataDroughtSecond> handDataList; // List of hand data with transforms and tubs
 
     public static int groundWater = 0;
 
@@ -20,7 +20,7 @@ public class LevelManagerDrought : MonoBehaviour
     private bool isInteracting = false; // Prevents multiple interactions simultaneously
 
     public float proximityRange = 5f; // Range within which the player can interact
-    public string drillerSceneName = "DrillingMiniGame"; // Name of the mini-game scene to load
+    public string pipesSceneName = "DrillingMiniGame"; // Name of the mini-game scene to load
 
     private GameObject player1;
     public bool isMiniGameActive = false; // To track if the mini-game is already active
@@ -36,18 +36,18 @@ public class LevelManagerDrought : MonoBehaviour
     private void Update()
     {
         CheckPlayerInteraction();
-        CheckPlayerDriller();
+        CheckPlayerPipes();
     }
 
-    private void CheckPlayerDriller()
+    private void CheckPlayerPipes()
     {
         if (Input.GetKeyDown(KeyCode.F) && !isMiniGameActive)
         {
             // Check proximity to the dam object
-            if (IsPlayerNearDriller())
+            if (IsPlayerNearPipes())
             {
                 Debug.Log("Player pressed F near Dam");
-                LoadDrillerScene();
+                LoadPipesScene();
             }
         }
     }
@@ -56,7 +56,7 @@ public class LevelManagerDrought : MonoBehaviour
     {
         while (currentHandIndex < handDataList.Count)
         {
-            HandDataDrought handData = handDataList[currentHandIndex];
+            HandDataDroughtSecond handData = handDataList[currentHandIndex];
 
             if (handData.input != null && !handData.input.gameObject.activeSelf)
             {
@@ -83,12 +83,12 @@ public class LevelManagerDrought : MonoBehaviour
         Debug.Log("All hands have been activated and interacted with.");
     }
 
-    private void LoadDrillerScene()
+    private void LoadPipesScene()
     {
         isMiniGameActive = true;
 
         // Load the mini-game scene directly
-        SceneManager.LoadScene(drillerSceneName);
+        SceneManager.LoadScene(pipesSceneName);
         Debug.Log("Mini-game scene loaded");
     }
 
@@ -116,7 +116,7 @@ public class LevelManagerDrought : MonoBehaviour
         }
     }
 
-    private IEnumerator HandleInteraction(HandDataDrought handData)
+    private IEnumerator HandleInteraction(HandDataDroughtSecond handData)
     {
         isInteracting = true;
 
@@ -142,7 +142,7 @@ public class LevelManagerDrought : MonoBehaviour
         isInteracting = false;
     }
 
-    private bool IsPlayerNearDriller()
+    private bool IsPlayerNearPipes()
     {
         // Calculate the distance between the player and the dam
         float distance = Vector3.Distance(player1.transform.position, transform.position);
@@ -155,9 +155,9 @@ public class LevelManagerDrought : MonoBehaviour
     }
 }
 
-// New HandDataDrought class to store hand and tub transforms
+// New HandDataDroughtSecond class to store hand and tub transforms
 [System.Serializable]
-public class HandDataDrought
+public class HandDataDroughtSecond
 {
     public Transform input; // The hand transform
     public List<Transform> Tubs; // List of tub transforms associated with this hand

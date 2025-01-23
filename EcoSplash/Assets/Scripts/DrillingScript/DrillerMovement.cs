@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DrillerMovement : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class DrillerMovement : MonoBehaviour
     {
         if(transform.position.y < -75f)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene("DroughtSceneWell");
         }
 
         if(Vector3.Distance(lastPosition, transform.position) >= moveDistance)
