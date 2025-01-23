@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4cfb4f3f2ca712e44b6e325e866d2bea
+timeCreated: 1483530250
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79777
+  packageName: Cartoon Farm Crops
+  packageVersion: 1.0
+  assetPath: Assets/Cartoon_Farm_Crops/Prefabs/Mobile/Dirt_Pile.prefab
+  uploadId: 158237
