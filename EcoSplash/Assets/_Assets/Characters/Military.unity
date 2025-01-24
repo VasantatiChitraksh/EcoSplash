@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.4862745, g: 0.69411767, b: 0.8117647, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2114283754330233425}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -104,7 +100,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +113,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -146,6 +142,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423283738}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.4, y: 3.66, z: 11.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -159,7 +156,6 @@ Transform:
   - {fileID: 543450653555371714}
   - {fileID: 543450652086823283}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841729440
 GameObject:
@@ -184,6 +180,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841729440}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -201,7 +198,6 @@ Transform:
   - {fileID: 543450651869394093}
   - {fileID: 543450653207441923}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1019308437 stripped
 Transform:
@@ -236,6 +232,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081335337}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.46, y: 3.63, z: 11.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -249,13 +246,13 @@ Transform:
   - {fileID: 543450652108903765}
   - {fileID: 543450653470628052}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &102550639841159013
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 497344561799895410, guid: 017750cd15617d846ab958b2c90a7f89, type: 3}
@@ -307,6 +304,9 @@ PrefabInstance:
       value: SK_Military_Survivalist (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017750cd15617d846ab958b2c90a7f89, type: 3}
 --- !u!4 &543450651586810938 stripped
 Transform:
@@ -403,6 +403,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 354126502899555955, guid: 9a46c8fcc8b7b4d40bf8984d09d74212, type: 3}
@@ -454,12 +455,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a46c8fcc8b7b4d40bf8984d09d74212, type: 3}
 --- !u!1001 &650287832080382463
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 416337254762414551, guid: a5673bc2ba44eb743aaaaeeccabc3a5f, type: 3}
@@ -511,12 +516,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5673bc2ba44eb743aaaaeeccabc3a5f, type: 3}
 --- !u!1001 &691993573008243070
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 1314792628975477344, guid: a89164b8df6251f4e96a803e3637e8d8, type: 3}
@@ -568,12 +577,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a89164b8df6251f4e96a803e3637e8d8, type: 3}
 --- !u!1001 &697247201906997609
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 390818605608248817, guid: b3c640d5746cf8f45819f788fe67bc6c, type: 3}
@@ -625,12 +638,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3c640d5746cf8f45819f788fe67bc6c, type: 3}
 --- !u!1001 &1209024306549286831
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 1209024305322473970, guid: 13038b49a8cfa564aa1a9ef9df96de79, type: 3}
@@ -686,12 +703,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13038b49a8cfa564aa1a9ef9df96de79, type: 3}
 --- !u!1001 &1340660156355391071
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 1517785858383151261, guid: ac23f03ab2778ad479d54a67552ff9ec, type: 3}
@@ -743,12 +764,16 @@ PrefabInstance:
       value: SK_Military_Survivalist (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac23f03ab2778ad479d54a67552ff9ec, type: 3}
 --- !u!1001 &1387086976488897573
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 1151533089436823999, guid: 67ee4c92fc8701b409879e605766f8f5, type: 3}
@@ -804,12 +829,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8338988565591873055}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67ee4c92fc8701b409879e605766f8f5, type: 3}
 --- !u!1001 &1569969155328193209
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 1315930552548475783, guid: 86e458efba38f814b942632aa1e5ea91, type: 3}
@@ -861,12 +890,16 @@ PrefabInstance:
       value: SK_Military_Survivalist (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86e458efba38f814b942632aa1e5ea91, type: 3}
 --- !u!1001 &2014162167439354458
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 478731823526353654, guid: b1765a45445c20047b67651862aae6a5, type: 3}
@@ -930,6 +963,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2014162165888303750, guid: b1765a45445c20047b67651862aae6a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2014162167439354460}
   m_SourcePrefab: {fileID: 100100000, guid: b1765a45445c20047b67651862aae6a5, type: 3}
 --- !u!1 &2014162167439354459 stripped
 GameObject:
@@ -948,14 +987,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
+  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
+  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 1
 --- !u!4 &2114283753834967213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 478731823526353655, guid: b1765a45445c20047b67651862aae6a5, type: 3}
@@ -971,6 +1013,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 2810827723386994177, guid: 344e5bc5b26a34542848678562e23c45, type: 3}
@@ -1022,12 +1065,16 @@ PrefabInstance:
       value: SK_Military_Survivalist (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 344e5bc5b26a34542848678562e23c45, type: 3}
 --- !u!1001 &2455584329104731258
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 2709273148333529303, guid: 832f2f1b5403b4a4ca05861efdc7e86b, type: 3}
@@ -1079,12 +1126,16 @@ PrefabInstance:
       value: SK_Military_FPS_Survivalist (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832f2f1b5403b4a4ca05861efdc7e86b, type: 3}
 --- !u!1001 &2556771821029217096
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 2662123336204171835, guid: 608204a693153b44bb0d21353cc50c01, type: 3}
@@ -1136,16 +1187,20 @@ PrefabInstance:
       value: SK_Military_FPS_Survivalist (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608204a693153b44bb0d21353cc50c01, type: 3}
 --- !u!1001 &2955806460680503673
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 7095286606914581452, guid: ad63182c87ed0fe42a8884a0b9e520ca, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 03c0b94cd9685824dbd259e44c5949c5, type: 2}
     - target: {fileID: 7095286607803683923, guid: ad63182c87ed0fe42a8884a0b9e520ca, type: 3}
@@ -1209,12 +1264,16 @@ PrefabInstance:
       value: 130000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad63182c87ed0fe42a8884a0b9e520ca, type: 3}
 --- !u!1001 &3238950514574919969
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 2320050368426870478, guid: 33a66f0fbf731ea4bb05806aaad4c2b7, type: 3}
@@ -1266,6 +1325,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33a66f0fbf731ea4bb05806aaad4c2b7, type: 3}
 --- !u!4 &3893294199639930361 stripped
 Transform:
@@ -1277,6 +1339,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 4692684994304406507, guid: 018f1c2109d7023488206bb23d1a8f71, type: 3}
@@ -1328,12 +1391,16 @@ PrefabInstance:
       value: SK_Military_Survivalist (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 018f1c2109d7023488206bb23d1a8f71, type: 3}
 --- !u!1001 &5112105001003942577
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 4718471775717255355, guid: 336d0b54dea0eaf4d9c4df99da8ac2eb, type: 3}
@@ -1385,6 +1452,9 @@ PrefabInstance:
       value: SK_Military_FPS_Survivalist (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 336d0b54dea0eaf4d9c4df99da8ac2eb, type: 3}
 --- !u!4 &5436592156352648490 stripped
 Transform:
@@ -1401,6 +1471,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2081335338}
     m_Modifications:
     - target: {fileID: 6229956304403577106, guid: 4cfd96ad30c5bd7468d24cc5815d0f18, type: 3}
@@ -1452,12 +1523,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cfd96ad30c5bd7468d24cc5815d0f18, type: 3}
 --- !u!1001 &6555040963243017355
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 6213075050325087084, guid: 863c031a8670d3e4d8708b005a77bc33, type: 3}
@@ -1509,12 +1584,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 863c031a8670d3e4d8708b005a77bc33, type: 3}
 --- !u!1001 &7102714605114928470
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 7285504989626172702, guid: 3445362fe63467f4d887cc7e9d93563e, type: 3}
@@ -1566,12 +1645,16 @@ PrefabInstance:
       value: SK_Military_FPS_Survivalist (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3445362fe63467f4d887cc7e9d93563e, type: 3}
 --- !u!1001 &7126892776772549460
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 3238095189752174411, guid: c1950778895ab564683b7f255fdaf06b, type: 3}
@@ -1599,7 +1682,7 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3238095189935882752, guid: c1950778895ab564683b7f255fdaf06b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7cff07407be075345ab4576b8ba510ce, type: 2}
     - target: {fileID: 3238095190345152192, guid: c1950778895ab564683b7f255fdaf06b, type: 3}
@@ -1651,12 +1734,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1950778895ab564683b7f255fdaf06b, type: 3}
 --- !u!1001 &7164307636964128919
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 7270501583233994522, guid: ee890c2bad02eb24992202c420217a7a, type: 3}
@@ -1708,12 +1795,16 @@ PrefabInstance:
       value: SK_Military_Survivalist (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee890c2bad02eb24992202c420217a7a, type: 3}
 --- !u!1001 &7289538470630803658
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
     - target: {fileID: 7107557499579693769, guid: 25671d77d13295f41a2396dc108890df, type: 3}
@@ -1765,6 +1856,9 @@ PrefabInstance:
       value: SK_Military_FPS_Survivalist (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25671d77d13295f41a2396dc108890df, type: 3}
 --- !u!4 &8063073396654575536 stripped
 Transform:
@@ -1776,6 +1870,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 423283739}
     m_Modifications:
     - target: {fileID: 8415119155074357024, guid: 45ba5550a3e809a4fbcb9111cbffedf9, type: 3}
@@ -1827,6 +1922,9 @@ PrefabInstance:
       value: SK_Military_Survivalist (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45ba5550a3e809a4fbcb9111cbffedf9, type: 3}
 --- !u!4 &8338988565591873055 stripped
 Transform:
@@ -1838,8 +1936,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 841729441}
     m_Modifications:
+    - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075269, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1889,4 +1992,14 @@ PrefabInstance:
       value: PlayerArmature
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 841729441}
+  - {fileID: 2081335338}
+  - {fileID: 423283739}
