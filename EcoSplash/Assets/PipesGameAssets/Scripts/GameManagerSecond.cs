@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 
-public class GameManager : MonoBehaviour
+public class GameManagerSecond : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManagerSecond Instance;
 
     [SerializeField] private LevelCollection levelCollection;
     [SerializeField] private Pipe cellPrefab;
@@ -137,23 +137,6 @@ public class GameManager : MonoBehaviour
             pipes[row, col].UpdateInput();
             StartCoroutine(ShowHint());
         }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            SkipLevel();
-        }
-    }
-    private void SkipLevel()
-    {
-        currentLevelIndex++;
-        if (currentLevelIndex < levelCollection.levels.Count)
-        {
-            SpawnLevel();
-            hasGameFinished = false;
-        }
-        else
-        {
-            StartCoroutine(ShowGameCompletionPanel());
-        }
     }
 
     private IEnumerator ShowHint()
@@ -209,7 +192,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckWin()
     {
-        // LevelData levelData = levelCollection.levels[currentLevelIndex];
+        LevelData levelData = levelCollection.levels[currentLevelIndex];
         bool allDestinationsFilled = true;
 
         foreach (var pipe in pipes)
@@ -235,18 +218,17 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 level1CompleteText.gameObject.SetActive(true);
-                yield return StartCoroutine(FadeOutAndDisable(level1CompleteText, 2f)); // Fade out and disable
+                yield return new WaitForSeconds(2f);
+                level1CompleteText.gameObject.SetActive(false);
                 break;
-
             case 1:
                 level2CompleteText.gameObject.SetActive(true);
-                yield return StartCoroutine(FadeOutAndDisable(level2CompleteText, 2f)); // Fade out and disable
+                yield return new WaitForSeconds(2f);
+                level2CompleteText.gameObject.SetActive(false);
                 break;
-
             default:
                 if (currentLevelIndex >= levelCollection.levels.Count - 1)
-                {   
-                    yield return new WaitForSeconds(0.8f); 
+                {
                     StartCoroutine(ShowGameCompletionPanel());
                     yield break;
                 }
@@ -265,22 +247,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Congratulations! All levels completed!");
         }
     }
-    private IEnumerator FadeOutAndDisable(TextMeshProUGUI text, float duration)
-    {
-        float timer = 0f;
-        Color originalColor = text.color;
-
-        while (timer < duration)
-        {
-            timer += Time.deltaTime;
-            float alpha = Mathf.Lerp(1, 0, timer / duration);
-            text.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
-            yield return null;
-        }
-
-        text.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0); // Ensure fully transparent
-        text.gameObject.SetActive(false); // Disable the GameObject
-    }   
     private IEnumerator ShowGameCompletionPanel()
     {
         // Disable game elements
@@ -308,7 +274,7 @@ public class GameManager : MonoBehaviour
         // Animate buttons
         restartButton.transform.localScale = Vector3.zero;
         quitButton.transform.localScale = Vector3.zero;
-        
+
         restartButton.transform.DOScale(1f, 0.5f).SetDelay(0.5f).SetEase(Ease.OutBack);
         quitButton.transform.DOScale(1f, 0.5f).SetDelay(0.6f).SetEase(Ease.OutBack);
 
@@ -331,6 +297,6 @@ public class GameManager : MonoBehaviour
 
     private void QuitGame()
     {
-        SceneManager.LoadScene("DroughtSceneHalf");
+        SceneManager.LoadScene("DroughtSceneFull");
     }
 }
