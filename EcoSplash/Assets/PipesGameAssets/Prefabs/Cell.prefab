@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9175583754621717432}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9175583754621717435
 SpriteRenderer:
@@ -50,6 +50,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -107,3 +110,5 @@ MonoBehaviour:
   - {fileID: 7760758649143203208, guid: e31f6df0906b89f4682f1d0977b8785a, type: 3}
   - {fileID: 7760758649143203208, guid: c04babdbe54b93c41a1d48c44359e218, type: 3}
   - {fileID: 7760758649143203208, guid: d7f81154b025432468dbbbb271c67086, type: 3}
+  rotationSound: {fileID: 8300000, guid: 224caff8b77d5b2449796069a1f20654, type: 3}
+  waterFillSound: {fileID: 8300000, guid: c17c3607d50706945ae620975757f0a6, type: 3}
