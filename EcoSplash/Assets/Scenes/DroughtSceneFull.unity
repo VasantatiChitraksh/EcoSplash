@@ -1427,7 +1427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &441145873
 Transform:
   m_ObjectHideFlags: 0
@@ -3367,7 +3367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &863816819
 Transform:
   m_ObjectHideFlags: 0
@@ -5284,58 +5284,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7270501583233994522, guid: ee890c2bad02eb24992202c420217a7a, type: 3}
   m_PrefabInstance: {fileID: 1358835565}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1381879971
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1381879973}
-  - component: {fileID: 1381879972}
-  m_Layer: 0
-  m_Name: MiniGame3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1381879972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381879971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e782573f0ffef75498f224f0df11f7f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handDataList: []
-  player: {fileID: 1358835570}
-  interactionDistance: 3
-  handActivationInterval: 15
-  proximityRange: 5
-  secondPipesSceneName: Gameplay_1
-  isMiniGameActive: 0
-  miniGameActivator: {fileID: 0}
---- !u!4 &1381879973
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381879971}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.8, y: 0, z: -2.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1440829878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5477,17 +5425,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1503325012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e782573f0ffef75498f224f0df11f7f5, type: 3}
+  m_Script: {fileID: 11500000, guid: c0b51b1f1435a1a49be1a6da4817c551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handDataList:
-  - input: {fileID: 1661891563}
-    Tubs: []
+  handDataList: []
   player: {fileID: 1358835570}
   interactionDistance: 3
   handActivationInterval: 3
   proximityRange: 5
-  secondPipesSceneName: DrillingMiniGame
+  pipesSceneName: DrillingMiniGame
   isMiniGameActive: 0
   miniGameActivator: {fileID: 0}
 --- !u!1001 &1509294923
@@ -5670,7 +5616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1548987053
 Transform:
   m_ObjectHideFlags: 0
@@ -6552,7 +6498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094777392214007970, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.92
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4094777392214007970, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6560,7 +6506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4094777392214007970, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.54
+      value: -8.6
       objectReference: {fileID: 0}
     - target: {fileID: 4094777392214007970, guid: d280ba7f42a541546a6762a81bd17c55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8211,4 +8157,3 @@ SceneRoots:
   - {fileID: 1358835565}
   - {fileID: 1965800094}
   - {fileID: 1503325014}
-  - {fileID: 1381879973}

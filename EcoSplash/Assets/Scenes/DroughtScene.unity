@@ -1846,7 +1846,7 @@ MonoBehaviour:
   offset: {x: 0, y: 6, z: -5}
   xBounds: {x: -27, y: 41}
   zBounds: {x: -36, y: 34}
-  minHeight: 10
+  minHeight: 6
 --- !u!1001 &515279425
 PrefabInstance:
   m_ObjectHideFlags: 0

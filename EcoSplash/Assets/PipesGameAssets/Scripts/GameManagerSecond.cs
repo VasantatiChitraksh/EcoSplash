@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 
-public class GameManager : MonoBehaviour
+public class GameManagerSecond : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManagerSecond Instance;
 
     [SerializeField] private LevelCollection levelCollection;
     [SerializeField] private Pipe cellPrefab;
@@ -274,7 +274,7 @@ public class GameManager : MonoBehaviour
         // Animate buttons
         restartButton.transform.localScale = Vector3.zero;
         quitButton.transform.localScale = Vector3.zero;
-        
+
         restartButton.transform.DOScale(1f, 0.5f).SetDelay(0.5f).SetEase(Ease.OutBack);
         quitButton.transform.DOScale(1f, 0.5f).SetDelay(0.6f).SetEase(Ease.OutBack);
 
@@ -297,6 +297,6 @@ public class GameManager : MonoBehaviour
 
     private void QuitGame()
     {
-        SceneManager.LoadScene("DroughtSceneHalf");
+        SceneManager.LoadScene("DroughtSceneFull");
     }
 }
