@@ -137,6 +137,23 @@ public class GameManager : MonoBehaviour
             pipes[row, col].UpdateInput();
             StartCoroutine(ShowHint());
         }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SkipLevel();
+        }
+    }
+    private void SkipLevel()
+    {
+        currentLevelIndex++;
+        if (currentLevelIndex < levelCollection.levels.Count)
+        {
+            SpawnLevel();
+            hasGameFinished = false;
+        }
+        else
+        {
+            StartCoroutine(ShowGameCompletionPanel());
+        }
     }
 
     private IEnumerator ShowHint()
@@ -192,7 +209,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckWin()
     {
-        LevelData levelData = levelCollection.levels[currentLevelIndex];
+        // LevelData levelData = levelCollection.levels[currentLevelIndex];
         bool allDestinationsFilled = true;
 
         foreach (var pipe in pipes)
@@ -218,17 +235,18 @@ public class GameManager : MonoBehaviour
         {
             case 0:
                 level1CompleteText.gameObject.SetActive(true);
-                yield return new WaitForSeconds(2f);
-                level1CompleteText.gameObject.SetActive(false);
+                yield return StartCoroutine(FadeOutAndDisable(level1CompleteText, 2f)); // Fade out and disable
                 break;
+
             case 1:
                 level2CompleteText.gameObject.SetActive(true);
-                yield return new WaitForSeconds(2f);
-                level2CompleteText.gameObject.SetActive(false);
+                yield return StartCoroutine(FadeOutAndDisable(level2CompleteText, 2f)); // Fade out and disable
                 break;
+
             default:
                 if (currentLevelIndex >= levelCollection.levels.Count - 1)
-                {
+                {   
+                    yield return new WaitForSeconds(0.8f); 
                     StartCoroutine(ShowGameCompletionPanel());
                     yield break;
                 }
@@ -247,6 +265,22 @@ public class GameManager : MonoBehaviour
             Debug.Log("Congratulations! All levels completed!");
         }
     }
+    private IEnumerator FadeOutAndDisable(TextMeshProUGUI text, float duration)
+    {
+        float timer = 0f;
+        Color originalColor = text.color;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float alpha = Mathf.Lerp(1, 0, timer / duration);
+            text.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+
+        text.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0); // Ensure fully transparent
+        text.gameObject.SetActive(false); // Disable the GameObject
+    }   
     private IEnumerator ShowGameCompletionPanel()
     {
         // Disable game elements
