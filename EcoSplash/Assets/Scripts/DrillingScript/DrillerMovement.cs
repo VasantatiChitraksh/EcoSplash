@@ -10,6 +10,7 @@ public class DrillerMovement : MonoBehaviour
 
     public GameObject EndScreen;
 
+    string drillerSceneName = "DrillerMiniGame";
     Camera cam;
     public GameObject prefab; 
     
@@ -77,7 +78,7 @@ public class DrillerMovement : MonoBehaviour
         if(collision.transform.parent.tag == "Garbage")
         {
             gameObject.SetActive(false);
-            EndScreen.enabled = true;
+            EndScreen.SetActive(true);
         }
     }
 }
