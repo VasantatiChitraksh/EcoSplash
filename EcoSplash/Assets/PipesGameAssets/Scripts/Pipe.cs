@@ -9,6 +9,13 @@ public class Pipe : MonoBehaviour
     [HideInInspector] public int PipeType;
 
     [SerializeField] private Transform[] _pipePrefabs;
+    [SerializeField] private AudioClip rotationSound;
+    [SerializeField] private AudioClip waterFillSound;
+    private bool hasPlayedWaterFillSound = false;
+    private bool wasFilledLastFrame = false;
+
+
+    private AudioSource audioSource;
 
     private Transform currentPipe;
     private int rotation;
@@ -23,6 +30,12 @@ public class Pipe : MonoBehaviour
 
     public void Init(int pipe)
     {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
         PipeType = pipe % 10;
         currentPipe = Instantiate(_pipePrefabs[PipeType], transform);
         currentPipe.transform.localPosition = Vector3.zero;
@@ -67,13 +80,29 @@ public class Pipe : MonoBehaviour
 
         rotation = (rotation + 1) % (maxRotation + 1);
         currentPipe.transform.eulerAngles = new Vector3(0, 0, rotation * rotationMultiplier);
+        if (rotationSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(rotationSound);
+        }
     }
 
     public void UpdateFilled()
     {
         if (PipeType == 0) return;
+
         emptySprite.gameObject.SetActive(!IsFilled);
         filledSprite.gameObject.SetActive(IsFilled);
+
+        // Play sound only when pipe transitions to filled state after being unfilled
+        if (PipeType == 2 && IsFilled && !wasFilledLastFrame && !hasPlayedWaterFillSound && 
+            audioSource != null && waterFillSound != null)
+        {
+            audioSource.PlayOneShot(waterFillSound);
+            hasPlayedWaterFillSound = true;
+        }
+
+        // Update the previous frame's fill state
+        wasFilledLastFrame = IsFilled;
     }
 
     public List<Pipe> ConnectedPipes()
