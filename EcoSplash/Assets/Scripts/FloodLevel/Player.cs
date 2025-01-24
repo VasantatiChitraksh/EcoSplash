@@ -86,7 +86,6 @@ public class Player : MonoBehaviour
     // Unity's built-in methods for collision detection
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the player is grounded by colliding with the ground
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
