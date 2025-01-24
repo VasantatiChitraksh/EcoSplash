@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 8466
   packageName: Sand Clock
   packageVersion: 1.5
-  assetPath: Assets/SandClock/Prefabs/sand_clock.prefab
+  assetPath: Assets/_Assets/Industrial_Level_Assets/SandClock/Prefabs/sand_clock.prefab
   uploadId: 411964

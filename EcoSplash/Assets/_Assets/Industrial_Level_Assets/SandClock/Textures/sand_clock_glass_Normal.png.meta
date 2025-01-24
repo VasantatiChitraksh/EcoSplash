@@ -91,5 +91,5 @@ AssetOrigin:
   productId: 8466
   packageName: Sand Clock
   packageVersion: 1.5
-  assetPath: Assets/SandClock/Textures/sand_clock_glass_Normal.png
+  assetPath: Assets/_Assets/Industrial_Level_Assets/SandClock/Textures/sand_clock_glass_Normal.png
   uploadId: 411964
