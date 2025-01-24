@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:EcoSplash/Assets/Hill Rock Mountain Terrain/URP Setup/URP Install.unitypackage.meta
+guid: 52e764e75c60dcb40a450e23fe8130a7
+========
 guid: ce75ba5d4d7019e4ab2900157051d85d
 folderAsset: yes
+>>>>>>>> main:EcoSplash/Assets/Scripts/MiniMap.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
