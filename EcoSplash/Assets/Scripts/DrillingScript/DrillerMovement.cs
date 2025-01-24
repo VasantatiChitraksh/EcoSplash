@@ -8,6 +8,8 @@ public class DrillerMovement : MonoBehaviour
     private float moveDistance = 1f;
     private Vector3 lastPosition;
 
+    public GameObject EndScreen;
+
     Camera cam;
     public GameObject prefab; 
     
@@ -65,12 +67,17 @@ public class DrillerMovement : MonoBehaviour
         Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         lastPosition = transform.position;
     }
+    public void RetryDrill()
+    {
+        SceneManager.LoadScene(drillerSceneName);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.parent.tag == "Garbage")
         {
             gameObject.SetActive(false);
+            EndScreen.enabled = true;
         }
     }
 }
