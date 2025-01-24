@@ -24,10 +24,6 @@ public class LevelManagerFull : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject); // Keep the object across scenes
         }
-        else
-        {
-            Destroy(gameObject); // Ensure only one instance exists
-        }
     }
 
     private void Start()
