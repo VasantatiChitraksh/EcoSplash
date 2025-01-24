@@ -11,6 +11,9 @@ public class Pipe : MonoBehaviour
     [SerializeField] private Transform[] _pipePrefabs;
     [SerializeField] private AudioClip rotationSound;
     [SerializeField] private AudioClip waterFillSound;
+    private bool hasPlayedWaterFillSound = false;
+    private bool wasFilledLastFrame = false;
+
 
     private AudioSource audioSource;
 
@@ -90,11 +93,16 @@ public class Pipe : MonoBehaviour
         emptySprite.gameObject.SetActive(!IsFilled);
         filledSprite.gameObject.SetActive(IsFilled);
 
-        // Play sound when destination pipe is filled
-        if (PipeType == 2 && IsFilled && audioSource != null && waterFillSound != null)
+        // Play sound only when pipe transitions to filled state after being unfilled
+        if (PipeType == 2 && IsFilled && !wasFilledLastFrame && !hasPlayedWaterFillSound && 
+            audioSource != null && waterFillSound != null)
         {
             audioSource.PlayOneShot(waterFillSound);
+            hasPlayedWaterFillSound = true;
         }
+
+        // Update the previous frame's fill state
+        wasFilledLastFrame = IsFilled;
     }
 
     public List<Pipe> ConnectedPipes()
