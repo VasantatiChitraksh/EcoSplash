@@ -20,7 +20,7 @@ public class LevelManagerDroughtSecond : MonoBehaviour
     private bool isInteracting = false; // Prevents multiple interactions simultaneously
 
     public float proximityRange = 5f; // Range within which the player can interact
-    public string pipesSceneName = "DrillingMiniGame"; // Name of the mini-game scene to load
+    public string pipesSceneName = "Gameplay"; // Name of the mini-game scene to load
 
     private GameObject player1;
     public bool isMiniGameActive = false; // To track if the mini-game is already active
