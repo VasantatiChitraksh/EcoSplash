@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManagerDrought : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class LevelManagerDrought : MonoBehaviour
 
     private GameObject player1;
     public bool isMiniGameActive = false; // To track if the mini-game is already active
+    public TextMeshProUGUI MainObjectiveText;
+    public TextMeshProUGUI ObjectiveText;
+    public TextMeshProUGUI SubtitleText;
+    public int textStatus = 0;
 
     [SerializeField] private Transform miniGameActivator;
 
@@ -31,12 +36,35 @@ public class LevelManagerDrought : MonoBehaviour
     {
         StartCoroutine(ActivateHandsByTime());
         player1 = GameObject.FindGameObjectWithTag("Player");
+        UpdateText();
     }
 
     private void Update()
     {
         CheckPlayerInteraction();
         CheckPlayerDriller();
+    }
+
+    void UpdateText()
+    {
+        if(textStatus == 0f){
+            MainObjectiveText.text = "Prevent Soil Erosion";
+            ObjectiveText.text = "Plant Cacti (0/3)";
+            SubtitleText.text = "The soil in your area is extremely dry and cracked.\n Plant trees that require minimal water, can stabilize the soil, prevent erosion, and help retain moisture effectively.";
+        }
+        if(textStatus == 1f){
+            ObjectiveText.text = "Plant Cacti (1/3)";
+        }
+        if(textStatus == 2f){
+            ObjectiveText.text = "Plant Cacti (2/3)";
+            SubtitleText.text = "Excellent! Cacti require very little water compared to most plants and trees.\nThey are also effective in retaining moisture and stabilizing soil, making them ideal for drought-prone areas.";
+        
+        }
+        if(textStatus == 3f){
+            MainObjectiveText.text = "Irrigate farms";
+            ObjectiveText.text = "Drill until you find groundwater";
+            SubtitleText.text = "Good job! The soil is now stabilized! Now, let's irrigate the farms.\n Oh no! The water supply has depleted! Quickly, drill boreholes and install a well to access groundwater and continue conserving water while irrigating the crops. ";
+        }
     }
 
     private void CheckPlayerDriller()
@@ -110,7 +138,10 @@ public class LevelManagerDrought : MonoBehaviour
                 // Wait for the player to press E
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+
                     StartCoroutine(HandleInteraction(handData));
+                    textStatus++;
+                    UpdateText();
                 }
             }
         }
