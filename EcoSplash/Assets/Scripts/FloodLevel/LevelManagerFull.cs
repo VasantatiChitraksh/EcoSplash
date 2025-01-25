@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManagerFull : MonoBehaviour
 {
@@ -16,7 +17,16 @@ public class LevelManagerFull : MonoBehaviour
     public bool isMiniGameActive = false;
     private int miniGameCounter = 1;
     public int miniGameCompletionThreshold = 3;
+    [SerializeField]private Canvas DynamicUI;
+    [SerializeField]private Canvas MiniMapUI;
+    [SerializeField]private AudioSource audioSource;
+    [SerializeField]private AudioClip objectiveCompleteSound;
+    private static int TextStatus = 0;
+    [SerializeField]private TextMeshProUGUI ObjectiveHead;
+    [SerializeField]private TextMeshProUGUI ObjectiveBody;
+    [SerializeField]private TextMeshProUGUI SubtitleText;
 
+    private static bool InitialSetupDone = false;
     private void Awake()
     {
         if (Instance == null)
@@ -25,18 +35,33 @@ public class LevelManagerFull : MonoBehaviour
             DontDestroyOnLoad(gameObject); // Keep the object across scenes
         }
     }
+    
+    private void UpdateText(){
+        audioSource.PlayOneShot(objectiveCompleteSound);
+        switch(TextStatus){
+            case 0 : ObjectiveHead.text = "Open Dam Gates";
+                     ObjectiveBody.text = "Open Dam Gates carefully(1/3)\nPress F near Dam to control opening of gates";
+                     SubtitleText.text = "Now, open the dam gates. \nCareful! We need to control the outflow by releasing water periodically or it may flood the downstream region";
+                     break;
+            case 1 : ObjectiveHead.text = "Open Dam Gates";
+                     ObjectiveBody.text = "Open Dam Gates carefully(2/3)\nPress F near Dam to control opening of gates";
+                     SubtitleText.text = "Now, open the dam gates. \nCareful! We need to control the outflow by releasing water periodically or it may flood the downstream region";
+                     break;
+        }
+    }
+
 
     private void Start()
     {
         player1 = GameObject.FindGameObjectWithTag("Player");
         OnMiniGameCompleted += UpdateMiniGameCounter;
+        UpdateText();
     }
 
     private void Update()
     {
         CheckPlayerDam();
     }
-
     private void CheckPlayerDam()
     {
         if (Input.GetKeyDown(KeyCode.F) && !isMiniGameActive)
@@ -44,6 +69,8 @@ public class LevelManagerFull : MonoBehaviour
             if (IsPlayerNearDam())
             {
                 Debug.Log("Player pressed F near Dam");
+                TextStatus++;
+                UpdateText();
                 LoadDamScene();
             }
         }

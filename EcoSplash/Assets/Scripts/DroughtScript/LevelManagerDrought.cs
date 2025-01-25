@@ -46,8 +46,8 @@ public class LevelManagerDrought : MonoBehaviour
 
     private void Start()
     {
-           InitialSetup.enabled = true;
-           DynamicUI.enabled = false;
+        InitialSetup.enabled = true;
+        DynamicUI.enabled = false;
         MiniMapUI.enabled = false;
         StartCoroutine(ActivateHandsByTime());
         player1 = GameObject.FindGameObjectWithTag("Player");
@@ -80,8 +80,8 @@ public class LevelManagerDrought : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-           InitialSetup.enabled = false;
-           DynamicUI.enabled = true;
+            InitialSetup.enabled = false;
+            DynamicUI.enabled = true;
             MiniMapUI.enabled = true;
             
         }
