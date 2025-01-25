@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManagerI : MonoBehaviour
 {
@@ -25,14 +26,116 @@ public class LevelManagerI : MonoBehaviour
     private GameObject player1;
     public bool isMiniGameActive = false; // To track if the mini-game is already active
 
+    
+    private static int TextStatus = 0;
+    [SerializeField]private TextMeshProUGUI ObjectiveHead;
+    [SerializeField]private TextMeshProUGUI ObjectiveBody;
+    [SerializeField]private TextMeshProUGUI SubtitleText;
+
+    [SerializeField]private AudioSource audioSource;
+    [SerializeField]private AudioClip objectiveCompleteSound;
+    [SerializeField]private Canvas InitialSetup;
+    [SerializeField]private Canvas DynamicUI;
+    [SerializeField]private Canvas MiniMapUI;
+
+    private static bool isInitialDone = false;
+    
+    private void UpdateText(){
+        audioSource.PlayOneShot(objectiveCompleteSound);
+        switch(TextStatus){
+            case 0 : ObjectiveHead.text = "Make Factory Eco-Friendly";
+                     ObjectiveBody.text = "Build a chimney\nBuild a waste recycler";
+                     SubtitleText.text = "Oh no! The river water is contaminated!\nThe factory is dumping its waste into the river. Let's work on making the factory eco-friendly!";
+                     break;
+            case 1 : ObjectiveHead.text = "Make Factory Eco-Friendly";
+                     ObjectiveBody.text = "Build a waste recycler\nBuild a waste pit";
+                     SubtitleText.text ="Chimneys help in pumping harmful and toxic gases far away from humans";
+                     break;
+            case 2 : ObjectiveHead.text = "Make Factory Eco-Friendly";
+                     ObjectiveBody.text = "Build a waste pit\nBuild a purifier";
+                     SubtitleText.text ="Waste recyclers help to reuse and recycle waste, thus reducing the amount of waste produced";
+                     break;
+            case 3 : ObjectiveHead.text = "Make Factory Eco-Friendly";
+                     ObjectiveBody.text = "Build a purifier";
+                     SubtitleText.text ="Waste pits are good for temporary handling of waste, and seperate solid waste from liquid waste";
+                     break;
+            case 4 : ObjectiveHead.text = "Purify factory waste";
+                     ObjectiveBody.text = "Press F near purifier to purify river";
+                     SubtitleText.text ="Great job! The waste is no longer being released into the river! Now, let's focus on cleaning the river.";
+                     break;
+            case 5 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Plough soil(0/4)";
+                     SubtitleText.text ="The river is clean!\nLet's use this water to grow some crops. Start by ploughing the four fields";
+                     break;
+            case 6 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Plough soil(1/4)";
+                     SubtitleText.text ="Keep ploughing!";
+                     break;
+            case 7 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Plough soil(2/4)";
+                     SubtitleText.text ="Halfway there!";
+                     break;
+            case 8 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Plough soil(3/4)";
+                     SubtitleText.text ="One left!";
+                     break;
+            case 9 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Connect the river to farms";
+                     SubtitleText.text ="Great! Now, connect the river to these farms!";
+                     break;
+            case 10 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Sow Seeds(0/4)";
+                     SubtitleText.text ="Excellent! We have access to fresh river water. \nAdd seeds now!";
+                     break;
+            case 11 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Sow Seeds(1/4)";
+                     SubtitleText.text ="Three left!";
+                     break;
+            case 12 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Sow Seeds(2/4)";
+                     SubtitleText.text ="Keep Going!";
+                     break;
+            case 13 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Sow Seeds(3/4)";
+                     SubtitleText.text ="Last one!";
+                     break;
+            case 14 : ObjectiveHead.text = "Grow Crops";
+                     ObjectiveBody.text = "Harvest the crops fully(4/4)";
+                     SubtitleText.text ="All the plants are ready.You can now harvest your crops and sell them at the market!\nInteract with the field to harvest crops.";
+                     break;
+                     
+            case 15 : ObjectiveHead.text = "Objective";
+                     ObjectiveBody.text = "Objectives completed";
+                     SubtitleText.text ="Fantastic work! You're truly an outstanding farmer! I can't wait to taste your delicious fruits and vegetables!";
+                     break;
+                     
+                     
+        }
+    }
+
     private void Start()
     {
         StartCoroutine(ActivateHandsByTimeI());
         player1 = GameObject.FindGameObjectWithTag("Player");
+        DynamicUI.enabled = false;
+        MiniMapUI.enabled = false;
+        InitialSetup.enabled = true;
+        UpdateText();
     }
 
     private void Update()
     {
+        if(isInitialDone){
+            DynamicUI.enabled = true;
+            MiniMapUI.enabled = true;
+            InitialSetup.enabled = false;  
+        }
+        if(Input.GetKeyDown(KeyCode.Return) && !isInitialDone){
+        DynamicUI.enabled = true;
+        MiniMapUI.enabled = true;
+        InitialSetup.enabled = false;
+        isInitialDone = true;  
+        }
         CheckPlayerInteractionI();
         CheckPlayerDamI();
     }
@@ -46,6 +149,8 @@ public class LevelManagerI : MonoBehaviour
             {
                 Debug.Log("Player pressed F near Dam");
                 LoadDamSceneI();
+                TextStatus++;
+                UpdateText();
             }
         }
     }
@@ -109,6 +214,8 @@ public class LevelManagerI : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     StartCoroutine(HandleInteractionI(handData));
+                    TextStatus++;
+                    UpdateText();
                 }
             }
         }

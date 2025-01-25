@@ -28,15 +28,25 @@ public class ValveController : MonoBehaviour
     public GameObject endScreen;
 
     public GameObject UItext;
+    [SerializeField]private Canvas InitialSetup;
+    [SerializeField]private Canvas UI;
+    [SerializeField]private bool isClosed = false;
 
     void Start()
     {
+        UI.enabled = false;
+        InitialSetup.enabled = true;
         initialRotation = transform.localRotation;
         progressBar.maxValue = progressMaxValue;
     }
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Return) && !isClosed){            
+            UI.enabled = true;
+            InitialSetup.enabled = false;
+            isClosed = true;
+        }
         HandleValveRotation();
         HandleWaterLevels();
     }
