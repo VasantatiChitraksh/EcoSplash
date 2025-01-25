@@ -3331,6 +3331,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e599b7540aa47146bf22eac1403516d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: 665fa8fb0ae9dc8429a270a588c46e91, type: 3}
+  hoverCursor: {fileID: 2800000, guid: 512d821453337b743846ce689807de72, type: 3}
 --- !u!4 &1221838774
 Transform:
   m_ObjectHideFlags: 0

@@ -20,12 +20,12 @@ public class CursorManager : MonoBehaviour
         Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.Auto);
     }
 
-    void OnMouseEnter()
+    public void OnMouseEnter()
     {
         SetCursor(hoverCursor);
     }
 
-    void OnMouseExit()
+    public void OnMouseExit()
     {
         SetCursor(defaultCursor);
     }
