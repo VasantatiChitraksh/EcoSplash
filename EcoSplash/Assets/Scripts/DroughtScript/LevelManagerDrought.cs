@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManagerDrought : MonoBehaviour
 {
@@ -15,26 +16,71 @@ public class LevelManagerDrought : MonoBehaviour
     [SerializeField] private float interactionDistance = 3f; // Distance within which the player can interact
 
     [Header("Hand Activation Settings")]
+
     [SerializeField] private float handActivationInterval = 15f; // Interval between hand activations
+
     private int currentHandIndex = 0; // Tracks the currently activated hand
+
     private bool isInteracting = false; // Prevents multiple interactions simultaneously
 
     public float proximityRange = 5f; // Range within which the player can interact
+
     public string drillerSceneName = "DrillingMiniGame"; // Name of the mini-game scene to load
 
     private GameObject player1;
+
     public bool isMiniGameActive = false; // To track if the mini-game is already active
 
     [SerializeField] private Transform miniGameActivator;
 
+    private int TextStatus = 0;
+    [SerializeField]private TextMeshProUGUI ObjectiveHead;
+    [SerializeField]private TextMeshProUGUI ObjectiveBody;
+    [SerializeField]private TextMeshProUGUI SubtitleText;
+
+    [SerializeField]private AudioSource audioSource;
+    [SerializeField]private AudioClip objectiveCompleteSound;
+    [SerializeField]private Canvas InitialSetup;
+    [SerializeField]private Canvas DynamicUI;
+
     private void Start()
     {
+           InitialSetup.enabled = true;
+           DynamicUI.enabled = false;
         StartCoroutine(ActivateHandsByTime());
         player1 = GameObject.FindGameObjectWithTag("Player");
+        UpdateText();
+    }
+
+    private void UpdateText(){
+        audioSource.PlayOneShot(objectiveCompleteSound);
+        switch(TextStatus){
+            case 0 : ObjectiveHead.text = "Prevent Soil Erosion";
+                     ObjectiveBody.text = "Plant Cacti(0/3)";
+                     SubtitleText.text = "The soil in your area is extremely dry and cracked.\n Plant trees that require minimal water, can stabilize the soil, prevent erosion, and help retain moisture effectively.";
+                     break;
+            case 1 : ObjectiveHead.text = "Prevent Soil Erosion";
+                     ObjectiveBody.text = "Plant Cacti(1/3)";
+                     SubtitleText.text = "Excellent! Cacti require very little water compared to most plants and trees.\n They are also effective in retaining moisture and stabilizing soil, making them ideal for drought-prone areas.";
+                     break;
+            case 2 : ObjectiveHead.text = "Prevent Soil Erosion";
+                     ObjectiveBody.text = "Plant Cacti(2/3)";
+                     SubtitleText.text = "Excellent! Cacti require very little water compared to most plants and trees.\n They are also effective in retaining moisture and stabilizing soil, making them ideal for drought-prone areas.";
+                     break;
+            case 3 : ObjectiveHead.text = "Irrigate the farms";
+                     ObjectiveBody.text = "Drill until you find groundwater and Install a well";
+                     SubtitleText.text = "Good job! The soil is now stabilized! Now, let's irrigate the farms \nOh no! The water supply has depleted! Quickly, drill boreholes and install a well to access groundwater and continue conserving water while irrigating the crops. ";
+                     break;
+        }
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+           InitialSetup.enabled = false;
+           DynamicUI.enabled = true;
+        }
         CheckPlayerInteraction();
         CheckPlayerDriller();
     }
@@ -111,6 +157,8 @@ public class LevelManagerDrought : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     StartCoroutine(HandleInteraction(handData));
+                    TextStatus++;
+                    UpdateText();
                 }
             }
         }
