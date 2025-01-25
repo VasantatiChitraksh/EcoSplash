@@ -9701,7 +9701,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: MoveSpeed
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: JumpHeight
@@ -9709,7 +9709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: SprintSpeed
-      value: 40
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: SpeedChangeRate
@@ -11458,8 +11458,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2574021029902883892, guid: 82b6ef6930b6d6942a4c61f7fa80ee69, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2118662673}
   m_SourcePrefab: {fileID: 100100000, guid: 82b6ef6930b6d6942a4c61f7fa80ee69, type: 3}
+--- !u!1 &2118662672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2574021029902883892, guid: 82b6ef6930b6d6942a4c61f7fa80ee69, type: 3}
+  m_PrefabInstance: {fileID: 2118662671}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2118662673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118662672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f4a0666c2d6ca42b4ce2386dce03d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proximityRange: 5
 --- !u!1001 &2132372487
 PrefabInstance:
   m_ObjectHideFlags: 0
