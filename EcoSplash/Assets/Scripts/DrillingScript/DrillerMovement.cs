@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class DrillerMovement : MonoBehaviour
@@ -9,8 +11,8 @@ public class DrillerMovement : MonoBehaviour
     private Vector3 lastPosition;
 
     Camera cam;
-    public GameObject prefab; 
-    
+    public GameObject prefab;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,19 +24,19 @@ public class DrillerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < -75f)
+        if (transform.position.y < -75f)
         {
             SceneManager.LoadScene("DroughtSceneWell");
         }
 
-        if(Vector3.Distance(lastPosition, transform.position) >= moveDistance)
+        if (Vector3.Distance(lastPosition, transform.position) >= moveDistance)
         {
             Dig();
         }
 
         FollowPlayer();
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>(); 
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = new Vector2(0, -downSpeed);
 
         float clampedX = Mathf.Clamp(transform.position.x, -10f, 10f);
@@ -43,13 +45,13 @@ public class DrillerMovement : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             FollowMouse();
-        } 
+        }
     }
 
     private void FollowMouse()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = -2;  
+        mousePos.z = -2;
         mousePos.y = transform.position.y;
 
         transform.position = Vector3.MoveTowards(transform.position, mousePos, sidewaysSpeed * Time.deltaTime);
@@ -62,15 +64,19 @@ public class DrillerMovement : MonoBehaviour
 
     private void Dig()
     {
-        Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z),
+            Quaternion.identity);
         lastPosition = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.parent.tag == "Garbage")
-        {
-            gameObject.SetActive(false);
-        }
+        StartCoroutine(LoadSceneWithDelay("DrillingMiniGame", 0.5f));
+    }
+
+    private IEnumerator LoadSceneWithDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
     }
 }
