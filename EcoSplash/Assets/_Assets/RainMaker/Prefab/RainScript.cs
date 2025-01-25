@@ -21,44 +21,42 @@ namespace DigitalRuby.RainMaker
 
         private void UpdateRain()
         {
-            if (Camera == null)
-            {
-                Camera = Camera.main;
-            }
-
-            if (Camera == null)
-            {
-                Debug.LogError("No camera available for rain script");
-                enabled = false;
-                return;
-            }
-
+            // keep rain and mist above the player
             if (RainFallParticleSystem != null)
             {
-                var s = RainFallParticleSystem.shape;
-                s.shapeType = ParticleSystemShapeType.ConeVolume;
-
                 if (FollowCamera)
                 {
+                    var s = RainFallParticleSystem.shape;
+                    s.shapeType = ParticleSystemShapeType.ConeVolume;
                     RainFallParticleSystem.transform.position = Camera.transform.position;
                     RainFallParticleSystem.transform.Translate(0.0f, RainHeight, RainForwardOffset);
                     RainFallParticleSystem.transform.rotation = Quaternion.Euler(0.0f, Camera.transform.rotation.eulerAngles.y, 0.0f);
+                    if (RainMistParticleSystem != null)
+                    {
+                        var s2 = RainMistParticleSystem.shape;
+                        s2.shapeType = ParticleSystemShapeType.Hemisphere;
+                        Vector3 pos = Camera.transform.position;
+                        pos.y += RainMistHeight;
+                        RainMistParticleSystem.transform.position = pos;
+                    }
                 }
-
-                if (RainMistParticleSystem != null)
+                else
                 {
-                    var s2 = RainMistParticleSystem.shape;
-                    s2.shapeType = FollowCamera ? ParticleSystemShapeType.Hemisphere : ParticleSystemShapeType.Box;
-
-                    Vector3 pos = FollowCamera 
-                        ? Camera.transform.position 
-                        : RainFallParticleSystem.transform.position;
-
-                    pos.y += RainMistHeight;
-                    RainMistParticleSystem.transform.position = pos;
+                    var s = RainFallParticleSystem.shape;
+                    s.shapeType = ParticleSystemShapeType.Box;
+                    if (RainMistParticleSystem != null)
+                    {
+                        var s2 = RainMistParticleSystem.shape;
+                        s2.shapeType = ParticleSystemShapeType.Box;
+                        Vector3 pos = RainFallParticleSystem.transform.position;
+                        pos.y += RainMistHeight;
+                        pos.y -= RainHeight;
+                        RainMistParticleSystem.transform.position = pos;
+                    }
                 }
             }
         }
+
         protected override void Start()
         {
             base.Start();

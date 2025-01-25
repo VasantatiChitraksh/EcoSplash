@@ -82,8 +82,8 @@ namespace DigitalRuby.RainMaker
 
         private void UpdateWind()
         {
-            if (EnableWind && WindZone != null && WindSpeedRange.y > 1.0f && Camera != null && audioSourceWind != null)
-                {
+            if (EnableWind && WindZone != null && WindSpeedRange.y > 1.0f)
+            {
                 WindZone.gameObject.SetActive(true);
                 if (FollowCamera)
                 {
@@ -116,11 +116,10 @@ namespace DigitalRuby.RainMaker
                 {
                     WindZone.gameObject.SetActive(false);
                 }
-                if (audioSourceWind != null)
-                {
-                    audioSourceWind.Stop();
-                }
+                audioSourceWind.Stop();
             }
+
+            audioSourceWind.Update();
         }
 
         private void CheckForRainChange()
