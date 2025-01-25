@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 01bf514967ce01640969d70c6a5e5020
+timeCreated: 1483530281
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 79777
+  packageName: Cartoon Farm Crops
+  packageVersion: 1.0
+  assetPath: Assets/Cartoon_Farm_Crops/Prefabs/Standard/Turnip_Fruit.prefab
+  uploadId: 158237
