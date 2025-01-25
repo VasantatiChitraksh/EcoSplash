@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DroughtSceneFull.unity
     guid: a7a62f23dd4fce64d9243bea5787fdde
+  - enabled: 1
+    path: Assets/Scenes/IndustrialLevelEnd.unity
+    guid: e0a18b9effa3e71409e85947955b1376
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
