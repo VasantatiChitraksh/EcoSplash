@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelManagerDroughtSecond : MonoBehaviour
 {
@@ -27,10 +28,40 @@ public class LevelManagerDroughtSecond : MonoBehaviour
 
     [SerializeField] private Transform miniGameActivator;
 
+    
+    private int TextStatus = 0;
+    [SerializeField]private TextMeshProUGUI ObjectiveHead;
+    [SerializeField]private TextMeshProUGUI ObjectiveBody;
+    [SerializeField]private TextMeshProUGUI SubtitleText;
+
+    
+    [SerializeField]private AudioSource audioSource;
+    [SerializeField]private AudioClip objectiveCompleteSound;
+
+
     private void Start()
     {
         StartCoroutine(ActivateHandsByTime());
         player1 = GameObject.FindGameObjectWithTag("Player");
+        UpdateText();
+    }
+    private void UpdateText(){
+        switch(TextStatus){
+            case 0 : ObjectiveHead.text = "Build Pipes";
+                     ObjectiveBody.text = "Connect well to farm(0/2)";
+                     SubtitleText.text = "Great work! Now, connect the well to the farms using pipes to ensure a steady water supply. ";
+                     break;
+            case 4 : audioSource.PlayOneShot(objectiveCompleteSound);
+                     ObjectiveHead.text = "Build Pipes";
+                     ObjectiveBody.text = "Connect well to farm(1/2)";
+                     SubtitleText.text = "Connect well to other farm ";
+                     break;
+            case 7 : audioSource.PlayOneShot(objectiveCompleteSound);
+                     ObjectiveHead.text = "Irrigate the fields";
+                     ObjectiveBody.text = "Irrigate the fields with water from well(0/2)";
+                     SubtitleText.text = "Great job!\nNow that we have plenty of water, it's time to irrigate the fields and keep them thriving!";
+                     break;
+        }
     }
 
     private void Update()
@@ -111,6 +142,8 @@ public class LevelManagerDroughtSecond : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     StartCoroutine(HandleInteraction(handData));
+                    TextStatus++;
+                    UpdateText();
                 }
             }
         }
