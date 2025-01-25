@@ -3607,6 +3607,7 @@ MonoBehaviour:
   buttonClickAudioSource: {fileID: 1832711722}
   fadeDuration: 1
   cameraTransitionTime: 1
+  quit: {fileID: 1119121092}
 --- !u!4 &1832711721
 Transform:
   m_ObjectHideFlags: 0
