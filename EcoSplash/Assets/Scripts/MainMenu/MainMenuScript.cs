@@ -16,8 +16,15 @@ public class MenuManager : MonoBehaviour
     public float cameraTransitionTime = 10f;
     private Vector3 mainCameraStartPosition;
 
+    [SerializeField] private Button quit;
+
     void Start()
-    {
+    {   
+        if(quit != null){
+            quit.onClick.AddListener(()=>{
+                Application.Quit();
+            });
+        }
         LevelMenuCanvas.gameObject.SetActive(false);
         mainCameraStartPosition = mainCamera.transform.position;
     }
