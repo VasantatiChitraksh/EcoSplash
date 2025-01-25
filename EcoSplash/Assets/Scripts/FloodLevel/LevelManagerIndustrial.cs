@@ -105,8 +105,10 @@ public class LevelManagerI : MonoBehaviour
                      break;
                      
             case 15 : ObjectiveHead.text = "Objective";
-                     ObjectiveBody.text = "Objectives completed";
-                     SubtitleText.text ="Fantastic work! You're truly an outstanding farmer! I can't wait to taste your delicious fruits and vegetables!";
+                     ObjectiveBody.text = "Objectives completed " +
+                                          "Press T to Teleport";
+                     SubtitleText.text ="Fantastic work! You're truly an outstanding farmer! I can't wait to taste your delicious fruits and vegetables!" +
+                                        "Find the ruin stone to teleport";
                      break;
                      
                      
