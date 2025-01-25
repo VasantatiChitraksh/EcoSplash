@@ -6202,7 +6202,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1996299562}
   - component: {fileID: 1996299561}
-  - component: {fileID: 1996299560}
   - component: {fileID: 1996299559}
   - component: {fileID: 1996299558}
   m_Layer: 0
@@ -6224,7 +6223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65732d71a31351043b0b6e102835d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 371435063}
 --- !u!114 &1996299559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6269,14 +6268,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &1996299560
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1996299557}
-  m_Enabled: 1
 --- !u!20 &1996299561
 Camera:
   m_ObjectHideFlags: 0
