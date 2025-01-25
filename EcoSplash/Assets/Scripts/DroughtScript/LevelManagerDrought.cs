@@ -42,11 +42,13 @@ public class LevelManagerDrought : MonoBehaviour
     [SerializeField]private AudioClip objectiveCompleteSound;
     [SerializeField]private Canvas InitialSetup;
     [SerializeField]private Canvas DynamicUI;
+    [SerializeField]private Canvas MiniMapUI;
 
     private void Start()
     {
            InitialSetup.enabled = true;
            DynamicUI.enabled = false;
+        MiniMapUI.enabled = false;
         StartCoroutine(ActivateHandsByTime());
         player1 = GameObject.FindGameObjectWithTag("Player");
         UpdateText();
@@ -80,6 +82,8 @@ public class LevelManagerDrought : MonoBehaviour
         {
            InitialSetup.enabled = false;
            DynamicUI.enabled = true;
+            MiniMapUI.enabled = true;
+            
         }
         CheckPlayerInteraction();
         CheckPlayerDriller();
