@@ -11905,7 +11905,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: MoveSpeed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: JumpHeight
@@ -11913,7 +11913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: SprintSpeed
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: SpeedChangeRate
