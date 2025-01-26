@@ -58,7 +58,7 @@ public class LevelManagerDroughtSecond : MonoBehaviour
                      break;
             case 7 : audioSource.PlayOneShot(objectiveCompleteSound);
                      ObjectiveHead.text = "Irrigate the fields";
-                     ObjectiveBody.text = "Irrigate the fields with water from well(0/2)";
+                     ObjectiveBody.text = "Irrigate the fields with water from well(0/2) \n Press F to Interact";
                      SubtitleText.text = "Great job!\nNow that we have plenty of water, it's time to irrigate the fields and keep them thriving!";
                      break;
         }
