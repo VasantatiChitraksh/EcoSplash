@@ -17,6 +17,13 @@
 
 ---
 
+## **Controls** 
+   - M (Tutorials Page To Explore Controls)
+   - WASD (Move)
+   - Space (Jump)
+   - Sprint (Shift)
+   - E/F (Interact/Minigame)
+   
 ## 🛠️ **Features & Gameplay Mechanics**
 1. **Levels**:  
    - **Drought**: Conserve groundwater by managing limited resources.  
@@ -104,7 +111,7 @@ We welcome contributions! Feel free to fork the repository and create pull reque
 ## 📞 **Contact**
 For questions, suggestions, or feedback, please reach out at:  
 - **Email**: cs23b054@iittp.ac.in 
-- **GitHub**: [Your GitHub Profile](https://github.com/YourProfile)  
+- **GitHub**: https://github.com/VasantatiChitraksh
 
 ---
 
