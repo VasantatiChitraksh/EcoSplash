@@ -3493,7 +3493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: SprintSpeed
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5504259220806075265, guid: f269b47f315e0284f8824a9e948a3f60, type: 3}
       propertyPath: SpeedChangeRate
@@ -12705,6 +12705,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a25aaeb263423438ea72cc904f7910, type: 3}
+--- !u!1 &1940181834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1940181836}
+  - component: {fileID: 1940181835}
+  m_Layer: 0
+  m_Name: CursorRemover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1940181835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940181834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33518c63e21375439301d12b1d49b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1940181836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940181834}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2980509, y: -25.851618, z: 30.832056}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1950157602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13553,3 +13597,4 @@ SceneRoots:
   - {fileID: 529805160}
   - {fileID: 1405653900}
   - {fileID: 1020313672}
+  - {fileID: 1940181836}
