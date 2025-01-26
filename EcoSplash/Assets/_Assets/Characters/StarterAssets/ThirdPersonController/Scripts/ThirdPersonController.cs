@@ -13,10 +13,10 @@ namespace StarterAssets
     {
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
-        public float MoveSpeed = 10.0f;
+        public float MoveSpeed = 25.0f;
 
         [Tooltip("Sprint speed of the character in m/s")]
-        public float SprintSpeed = 20.335f;
+        public float SprintSpeed = 35.335f;
 
         [Tooltip("How fast the character turns to face movement direction")]
         [Range(0.0f, 0.3f)]
@@ -139,31 +139,18 @@ namespace StarterAssets
 
         private void Move()
         {
-            // Existing move method with Time.deltaTime for consistent speed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed;
 
-            if (_input.move == Vector2.zero) targetSpeed = 0.0f;
-
-            float currentHorizontalSpeed = new Vector3(_controller.velocity.x, 0.0f, _controller.velocity.z).magnitude;
-
-            float speedOffset = 0.1f;
-            float inputMagnitude = _input.analogMovement ? _input.move.magnitude : 1f;
-
-            if (currentHorizontalSpeed < targetSpeed - speedOffset ||
-                currentHorizontalSpeed > targetSpeed + speedOffset)
-            {
-                _speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude,
-                    Time.deltaTime * SpeedChangeRate);
-
-                _speed = Mathf.Round(_speed * 1000f) / 1000f;
-            }
+            if (_input.sprint)
+                targetSpeed = SprintSpeed;
             else
-            {
-                _speed = targetSpeed;
-            }
+                targetSpeed = MoveSpeed;
 
-            _animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
-            if (_animationBlend < 0.01f) _animationBlend = 0f;
+            if (_input.move == Vector2.zero) 
+                targetSpeed = 0.0f;
+
+            _speed = targetSpeed;
+            _animationBlend = targetSpeed;
 
             Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
 
@@ -183,10 +170,14 @@ namespace StarterAssets
 
             if (_hasAnimator)
             {
-                _animator.SetFloat(_animIDSpeed, _animationBlend);
-                _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+                _animator.SetFloat(_animIDSpeed, _speed);
+                _animator.SetFloat(_animIDMotionSpeed, _input.move.magnitude);
             }
-        }        private void JumpAndGravity()
+
+            Debug.Log($"Current Speed: {_speed}, Target Speed: {targetSpeed}");
+        }
+
+        private void JumpAndGravity()
         {
             if (Grounded)
             {
