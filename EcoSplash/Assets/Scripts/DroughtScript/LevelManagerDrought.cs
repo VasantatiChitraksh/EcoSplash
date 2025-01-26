@@ -69,7 +69,7 @@ public class LevelManagerDrought : MonoBehaviour
                      ObjectiveBody.text = "Plant Cacti(2/3)";
                      SubtitleText.text = "Excellent! Cacti require very little water compared to most plants and trees.\n They are also effective in retaining moisture and stabilizing soil, making them ideal for drought-prone areas.";
                      break;
-            case 3 : ObjectiveHead.text = "Irrigate the farms";
+            case 3 : ObjectiveHead.text = "Irrigate the farms \n Press F to Interact";
                      ObjectiveBody.text = "Drill until you find groundwater and Install a well";
                      SubtitleText.text = "Good job! The soil is now stabilized! Now, let's irrigate the farms \nOh no! The water supply has depleted! Quickly, drill boreholes and install a well to access groundwater and continue conserving water while irrigating the crops. ";
                      break;
